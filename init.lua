@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -161,9 +161,12 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('i', 'jj', '<Esc>')
-vim.keymap.set('n', '<leader>n', '<cmd>Neotree toggle<CR>')
+vim.keymap.set('n', '<leader>n', '<cmd>Neotree toggle float<CR>')
+vim.keymap.set('n', '<leader>N', '<cmd>Neotree focus<CR>')
+vim.keymap.set('n', '<leader>nz', '<cmd>Neotree toggle left<CR>')
 vim.keymap.set('n', '<leader>k', '<cmd>LspStop<CR>')
 vim.keymap.set('n', '<leader>K', '<cmd>LspStart<CR>')
+vim.keymap.set('v', 'y', 'ygv<Esc>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
