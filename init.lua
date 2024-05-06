@@ -154,8 +154,8 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+-- vim.opt.tabstop = 4
+-- vim.opt.shiftwidth = 4
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -623,6 +623,10 @@ require('lazy').setup({
     },
     opts = {
       notify_on_error = false,
+      format_after_save = {
+        timeout_ms = 500,
+        lsp_fallback = true,
+      },
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -636,6 +640,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
+        -- python = { 'black' },
         python = { 'isort', 'black' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
